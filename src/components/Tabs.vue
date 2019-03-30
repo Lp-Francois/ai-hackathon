@@ -10,7 +10,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for ="element of elements.global">
+              <tr v-for="element of elements.global">
                 <th>{{ element.name }}</th>
                 <td>{{ element.fiability }} %</td>
               </tr>
@@ -26,7 +26,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for ="element of elements.precipitation">
+              <tr v-for="element of elements.precipitation">
                 <th>{{ element.name }}</th>
                 <td>{{ element.fiability }} %</td>
               </tr>
@@ -42,7 +42,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for ="element of elements.humidity">
+              <tr v-for="element of elements.humidity">
                 <th>{{ element.name }}</th>
                 <td>{{ element.fiability }} %</td>
               </tr>
@@ -58,7 +58,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for ="element of elements.temperature">
+              <tr v-for="element of elements.temperature">
                 <th>{{ element.name }}</th>
                 <td>{{ element.fiability }} %</td>
               </tr>
