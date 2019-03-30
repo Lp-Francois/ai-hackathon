@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <Header msg="This is the header"/>
+    <Header/>
 
     <!--<img alt="Vue logo" src="./assets/logo.png">-->
 
-    <Overview msg="Welcome to Your Vue.js App"/>
+   
+    <Tabs/>
 
+    <Overview msg="Overview component"/>
     <Footer/>
   </div>
 </template>
@@ -13,6 +15,7 @@
 <script>
 import Header from './components/Header.vue'
 import Overview from './components/Overview.vue'
+import Tabs from './components/Tabs.vue'
 import Footer from './components/Footer.vue'
 
 
@@ -21,6 +24,7 @@ export default {
   components: {
     Header,
     Overview,
+    Tabs,
     Footer,
   }
 }
