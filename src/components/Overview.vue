@@ -1,15 +1,15 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1><!--{{ msg }}--></h1>
   </div>
 </template>
   
 <script>
 export default {
-  name: 'My AI app',
+  /*name: 'My AI app',
   props: {
     msg: String
-  }
+  }*/
 }
 </script>
 

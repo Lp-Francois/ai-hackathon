@@ -1,52 +1,65 @@
 <template>
-  <div class="small">
-    <line-chart :chart-data="datacollection"></line-chart>
-    <button @click="fillData()">Randomize</button>
-  </div>
+  <section class="container chart-1">
+    <line-chart :datacollection="datacollection" :options="options"></line-chart>
+  </section>
 </template>
 
 <script>
-  import LineChart from './charts/LineChart.vue'
+import LineChart from '@/components/charts/LineChart'
 
-  export default {
+export default {
+    name: 'VueChartJS',
     components: {
       LineChart
     },
+
     data () {
-      return {
-        datacollection: null
-      }
-    },
-    mounted () {
-      this.fillData()
-    },
-    methods: {
-      fillData () {
-        this.datacollection = {
-          labels: [this.getRandomInt(), this.getRandomInt()],
-          datasets: [
-            {
-              label: 'Data One',
-              backgroundColor: '#f87979',
-              data: [this.getRandomInt(), this.getRandomInt()]
-            }, {
-              label: 'Data One',
-              backgroundColor: '#f87979',
-              data: [this.getRandomInt(), this.getRandomInt()]
-            }
-          ]
+    return {
+      datacollection: {
+        //Data to be represented on x-axis
+      labels: ['2019-02-28', '2019-03-01', '2019-03-03', '2019-03-04', '2019-03-05', '2019-03-06', '2019-03-07'],
+      datasets: [
+        {
+          label: 'Data One',
+          backgroundColor: '#f87979',
+          pointBackgroundColor: 'white',
+          borderWidth: 1,
+          pointBorderColor: '#249EBF',
+          fill: false,
+          //Data to be represented on y-axis
+          data: [40, 20, 30, 50, 90, 10, 20]
         }
+      ]
       },
-      getRandomInt () {
-        return Math.floor(Math.random() * (50 - 5 + 1)) + 5
-      }
+      options: {
+        scales: {
+          yAxes: [{
+          ticks: {
+              beginAtZero: true
+            },
+            gridLines: {
+            display: true
+          }
+        }],
+        xAxes: [{
+          gridLines: {
+            display: false
+          }
+        }]
+      },
+        legend: {
+        display: true
+      },
+      responsive: true,
+      maintainAspectRatio: false,
     }
   }
+}
+}
 </script>
 
-<style>
-  .small {
-    max-width: 600px;
-    margin:  150px auto;
+<style scoped>
+  .chart-1 {
+    margin-top: 100px;
   }
 </style>

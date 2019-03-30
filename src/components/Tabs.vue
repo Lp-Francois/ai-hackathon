@@ -1,65 +1,117 @@
 <template>
-    <b-tabs type="is-toggle" class="tabs-1" expanded>
-        <b-tab-item label="Pluie" icon="cloud-sun-rain ">
+  <div>
+     <b-tabs type="is-medium" class="block tabs-1" expanded>
+        <b-tab-item label="Global">
           <table class="table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th class="left">Fiabilité</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr>
-                <th>API-AGRO</th>
-                <td>98%</td>
-              </tr>
-              <tr>
-                <th>Open Weather Maps</th>
-                <td>68%</td>
-              </tr>
-              <tr>
-                <th>Open Weather Maps</th>
-                <td>68%</td>
-              </tr>
-              <tr>
-                <th>Open Weather Maps</th>
-                <td>68%</td>
+              <tr v-for ="element of elements.global">
+                <th>{{ element.name }}</th>
+                <td>{{ element.fiability }} %</td>
               </tr>
             </tbody>
           </table>
         </b-tab-item>
-        <b-tab-item label="Temperature" icon="library-music">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, neque. Reprehenderit, sit modi rerum? Ea, odio, 
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur odio, atque ipsa repellat expedita nostrum, minima voluptatibus, ut illum mollitia reiciendis laudantium voluptates. Labore consequatur, illo distinctio magnam ea nihil.
-          voluptatibus esse iusto doloribus quas vel, vitae modi dicta accusamus nostrum corporis dolorum ut.
+        <b-tab-item label="Pluie">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th class="left">Fiabilité</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for ="element of elements.precipitation">
+                <th>{{ element.name }}</th>
+                <td>{{ element.fiability }} %</td>
+              </tr>
+            </tbody>
+          </table>
         </b-tab-item>
-        <b-tab-item label="Humidité" icon="humidity">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, laborum placeat temporibus recusandae corrupti laboriosam debitis adipisci quos deserunt, veniam aperiam nemo, quis quibusdam aut. Dicta provident, doloribus architecto eveniet.
+        <b-tab-item label="Temperature">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th class="left">Fiabilité</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for ="element of elements.humidity">
+                <th>{{ element.name }}</th>
+                <td>{{ element.fiability }} %</td>
+              </tr>
+            </tbody>
+          </table>
+        </b-tab-item>
+        <b-tab-item label="Humidité">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th class="left">Fiabilité</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for ="element of elements.temperature">
+                <th>{{ element.name }}</th>
+                <td>{{ element.fiability }} %</td>
+              </tr>
+            </tbody>
+          </table>
         </b-tab-item>
     </b-tabs>
+    <!--
+    <ul>
+      <li v-for="element of elements">
+        <h2>{{ element }}</h2>
+      </li>
+    </ul> -->
+  </div>
+  
 </template>
   
 <script>
+import axios from 'axios';
+
+// https://2h0snxxpa9.execute-api.eu-west-3.amazonaws.com/v1/meteo/graphe
+
 export default {
   name: 'Tabs',
-  props: {
-    msg: String
-  }
+  data () {
+    return  {
+      elements: []
+    }
+  },
+  created() {
+    axios.get(`https://2h0snxxpa9.execute-api.eu-west-3.amazonaws.com/v1/meteo`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.elements = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+  },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .tabs-1 {
-    margin-top: 100px;
+    margin-top: 2rem;
     background-color: white;
-  }
-
-  td {
-    float: right;
   }
 
   .table {
     width: 100%;
   }
 
-  .tabs.is-toggle li.is-active a {
-    background-color: #00d1b2;
-    border-color: #00d1b2;
+  .table th, .table td {
+    text-align: center;
   }
-
 </style>

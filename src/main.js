@@ -1,11 +1,15 @@
 import Vue from 'vue'
-import App from './App.vue'
-
+import axios from 'axios';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 
-import Chart from 'chart.js'
-import Vuechartjs from 'vue-chartjs'
+import App from './App.vue'
+
+
+
+
+//import Chart from 'chart.js'
+//import Vuechartjs from 'vue-chartjs'
 
 Vue.use(Buefy)
 

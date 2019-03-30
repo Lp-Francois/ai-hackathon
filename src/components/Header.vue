@@ -2,22 +2,16 @@
   <div>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="#">
+        <span class="navbar-item" href="#">
           <img src="~@/assets/thunder.png" width="28" height="48">
-        </a>
-
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+        </span>
       </div>
       
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item brand">
-            Meteo Monde
-          </a>
+          <span class="navbar-item brand">
+            SmartAgri
+          </span>
           <!--
           <a class="navbar-item">
             Documentation
