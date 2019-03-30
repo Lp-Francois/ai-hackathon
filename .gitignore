@@ -19,3 +19,11 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+
+*.log 
+.deploy*/ 
+public/ 
+src/_drafts 
+package-lock.json
+db.json
