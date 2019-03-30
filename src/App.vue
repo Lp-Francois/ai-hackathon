@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <Header/>
-
     <!--<img alt="Vue logo" src="./assets/logo.png">-->
 
-   
-    <Tabs/>
-
-    <Overview msg="Overview component"/>
+    <body>
+      <Tabs class="container"/>
+      <Overview msg="Overview component" class="container"/>
+    </body>
+    
     <Footer/>
   </div>
 </template>
@@ -38,4 +38,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+body {
+  background-color: #ECF0F3;
+}
+
 </style>

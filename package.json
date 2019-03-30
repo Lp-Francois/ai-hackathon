@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "buefy": "^0.7.3",
+    "chart.js": "^2.8.0",
     "vue": "^2.6.6"
   },
   "devDependencies": {

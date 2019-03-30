@@ -60,11 +60,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   nav {
-    background-color: #00d1b2;
+    background-color: white;
+    border-top: 5px solid #00d1b2;
+    -moz-box-shadow:    3px 3px 5px 4px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 4px #ccc;
+    box-shadow:         3px 3px 5px 4px #ccc;
   }
 
   .brand {
-    color: white;
+    color: grey;
   }
   
 </style>
