@@ -3,8 +3,9 @@ import App from './App.vue'
 
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
-import Chart from 'chart.js'
 
+import Chart from 'chart.js'
+import Vuechartjs from 'vue-chartjs'
 
 Vue.use(Buefy)
 

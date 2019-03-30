@@ -6,6 +6,8 @@
     <body>
       <Tabs class="container"/>
       <Overview msg="Overview component" class="container"/>
+    
+      <Firstchart/>
     </body>
     
     <Footer/>
@@ -16,6 +18,7 @@
 import Header from './components/Header.vue'
 import Overview from './components/Overview.vue'
 import Tabs from './components/Tabs.vue'
+import Firstchart from './components/Firstchart.vue'
 import Footer from './components/Footer.vue'
 
 
@@ -26,6 +29,7 @@ export default {
     Overview,
     Tabs,
     Footer,
+    Firstchart
   }
 }
 </script>
