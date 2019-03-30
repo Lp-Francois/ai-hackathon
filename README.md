@@ -1,5 +1,7 @@
 # hackathon-ai
 
+![Our Logo](https://github.com/AsterYujano/ai-hackathon/blob/master/src/assets/logo.png)
+
 Homemade project by Team 15 in ISEP AI HACKATHON.
 
 ## Project setup
