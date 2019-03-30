@@ -3,14 +3,14 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <span class="navbar-item" href="#">
-          <img src="~@/assets/thunder.png" width="28" height="48">
+          <img src="~@/assets/logo.png" height="100">
         </span>
       </div>
       
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <span class="navbar-item brand">
-            SmartAgri
+            
           </span>
           <!--
           <a class="navbar-item">

@@ -10,6 +10,7 @@
               </tr>
             </thead>
             <tbody>
+              <!-- Brrr this is ugly (Need to code very fast :shrug: ) -->
               <tr v-for="element of elements.global">
                 <th>{{ element.name }}</th>
                 <td>{{ element.fiability }} %</td>
@@ -79,8 +80,6 @@
 <script>
 import axios from 'axios';
 
-// https://2h0snxxpa9.execute-api.eu-west-3.amazonaws.com/v1/meteo/graphe
-
 export default {
   name: 'Tabs',
   data () {
@@ -91,7 +90,6 @@ export default {
   created() {
     axios.get(`https://2h0snxxpa9.execute-api.eu-west-3.amazonaws.com/v1/meteo`)
     .then(response => {
-      // JSON responses are automatically parsed.
       this.elements = response.data
     })
     .catch(e => {
